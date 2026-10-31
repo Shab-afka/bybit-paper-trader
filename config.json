@@ -1,7 +1,7 @@
 {
   "api_key": "GKzcsZntTCtRVMpD8W",
   "secret_key": "6EU6k9ZqgpCTkXoEOVowRNdSgZVbJ4K2eyip",
-  "mode": "paper",
+  "mode": "live",
   "pairs": ["BTCUSDT", "ETHUSDT", "SOLUSDT"],
   "risk_per_trade_pct": 0.5,
   "daily_loss_limit_pct": 3.0,
