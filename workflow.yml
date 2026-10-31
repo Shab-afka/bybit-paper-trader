@@ -1,0 +1,28 @@
+name: Paper Trader
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # каждые 30 минут
+  workflow_dispatch: # ручной запуск по кнопке
+
+jobs:
+  run-trader:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install ccxt pandas numpy requests
+
+      - name: Run paper trader
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        run: python main.py
